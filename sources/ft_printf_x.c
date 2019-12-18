@@ -6,13 +6,11 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 12:23:39 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/16 18:42:53 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/18 17:47:31 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-
-
 
 void	ft_putnbr_base(t_printf *p, unsigned int nbr, char *base)
 {
@@ -39,24 +37,21 @@ void	ft_printf_x(t_printf *p)
 	unsigned int nbr;
 
 	nbr = va_arg(p->args, unsigned int);
-	if (p->print_str != NULL)
-		free(p->print_str);
-	if (nbr == 0 && !p->width && !p->precision && p->flags[MINUS] == 0)
-	{
-		ft_putchar_n(p, '0');
-		flagszero(p);
-		return ;
-	}
 	if (*p->str == 'X')
-	{
 		ft_putnbr_base(p, nbr, "0123456789ABCDEF");
-	}
 	else if (*p->str == 'x')
-	{
 		ft_putnbr_base(p, nbr, "0123456789abcdef");
-	}
 	if (nbr == 0)
+	{
+		free(p->print_str);
 		p->print_str = ft_strdup("0");
+	}
+	if (p->flags[DOT] == 1 && nbr == 0)
+	{
+		free(p->print_str);
+		p->print_str = ft_strdup("");
+	}
 	ft_strrev(p->print_str);
 	ft_parse_numbers(p);
+	ft_del(p->print_str);
 }

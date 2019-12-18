@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:28:48 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/12 13:15:03 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/18 17:42:10 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,11 @@ void	flagszero(t_printf *p)
 	p->flags[MULT] = 0;
 	p->width = 0;
 	p->precision = 0;
+}
+
+void	ft_del(char *str)
+{
+	if (str != NULL)
+		free(str);
+	str = NULL;
 }

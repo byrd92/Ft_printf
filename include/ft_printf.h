@@ -6,16 +6,17 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 18:24:11 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/16 19:10:42 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/18 17:42:20 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-#define ZERO 0
-#define MINUS 1
-#define DOT 2
-#define MULT 3
+# define ZERO 0
+# define MINUS 1
+# define DOT 2
+# define MULT 3
+
 /*
 ** ------------ External Headers-----------------
 */
@@ -69,5 +70,7 @@ void	ft_putchar_precision(t_printf *p);
 void	ft_print_str(t_printf *p);
 void	ft_parse_numbers(t_printf *p);
 void	ft_print_nbr(t_printf *p);
-//void	ft_manage_flags(p);
-# endif
+void	ft_print_percent(t_printf *p);
+void	ft_putchar_n(t_printf *p, char c);
+void	ft_del(char *str);
+#endif

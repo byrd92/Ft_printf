@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 10:42:12 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/04 10:43:34 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/18 16:54:43 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,26 +25,7 @@ static int	ft_count_size(long int n)
 	size++;
 	return (size);
 }
-/*
-static void	ft_strrev(char *str)
-{
-	int		i;
-	int		count;
-	char	tmp;
 
-	count = 0;
-	i = -1;
-	while (str[count])
-		count++;
-	count--;
-	while (i++ < count / 2)
-	{
-		tmp = str[i];
-		str[i] = str[count - i];
-		str[count - i] = tmp;
-	}
-}
-*/
 static char	*ft_intoa(char *str, long int n, int size)
 {
 	int i;

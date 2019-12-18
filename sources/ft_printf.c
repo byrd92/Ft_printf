@@ -6,11 +6,18 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 18:23:07 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/16 16:15:29 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/18 17:58:50 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+void	ft_putchar_n(t_printf *p, char c)
+{
+	write(1, &c, 1);
+	p->count++;
+	p->index++;
+}
 
 int		ft_printf(const char *str, ...)
 {
@@ -22,13 +29,10 @@ int		ft_printf(const char *str, ...)
 	va_start(p.args, str);
 	while (*p.str)
 	{
-		if (*p.str == '%')
+		if (*p.str == '%' && *p.str + 1)
 		{
 			++p.str;
 			ft_checktype(&p);
-			//free (p.print_str);
-			if (*p.str == '%')
-				ft_putchar_n(&p, '%');
 		}
 		else
 			ft_putchar_n(&p, *p.str);
