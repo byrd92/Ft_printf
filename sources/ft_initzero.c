@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:28:48 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:42:10 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:28:08 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_printf	*initzero(t_printf *p)
 	return (p);
 }
 
-void	flagszero(t_printf *p)
+void		flagszero(t_printf *p)
 {
 	p->flags[ZERO] = 0;
 	p->flags[MINUS] = 0;
@@ -37,7 +37,7 @@ void	flagszero(t_printf *p)
 	p->precision = 0;
 }
 
-void	ft_del(char *str)
+void		ft_del(char *str)
 {
 	if (str != NULL)
 		free(str);

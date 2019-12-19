@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 18:23:07 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:58:50 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 13:12:13 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int		ft_printf(const char *str, ...)
 		}
 		else
 			ft_putchar_n(&p, *p.str);
-		++p.str;
+		if (*p.str != '\0')
+			++p.str;
 	}
 	va_end(p.args);
 	return (p.count);

@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 18:24:11 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:42:20 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:37:33 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 /*
 ** ------------ External Headers-----------------
 */
-# include <stdio.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include "../libft/libft.h"
@@ -43,34 +42,35 @@ typedef	struct			s_printf
 	int					neg;
 }						t_printf;
 
-
 /*
 ** --------------- Main Funtions  ----------------
 */
-int		ft_printf(const char *s, ...);
-void	ft_putchar_n(t_printf *p, char c);
-void	ft_putstr(t_printf *p);
-void	ft_checktype(t_printf *p);
-void	ft_printf_id(t_printf *p);
-void	ft_printf_c(t_printf *p);
-t_printf	*initzero(t_printf *p);
-void	ft_manage_flags(t_printf *p);
-void	ft_manage_digits(t_printf *p);
-void	ft_addzero(t_printf *p);
-void	ft_addflags(t_printf *p);
-void	ft_addspace(t_printf *p);
-void	ft_printf_x(t_printf *p);
-void	flagszero(t_printf *p);
-void	ft_print_str(t_printf *p);
-void	ft_putnbr_base(t_printf *p, unsigned int nbr, char *base);
-void	ft_printf_p(t_printf *p);
-void	ft_addspace(t_printf *p);
-void	ft_addzero(t_printf *p);
-void	ft_putchar_precision(t_printf *p);
-void	ft_print_str(t_printf *p);
-void	ft_parse_numbers(t_printf *p);
-void	ft_print_nbr(t_printf *p);
-void	ft_print_percent(t_printf *p);
-void	ft_putchar_n(t_printf *p, char c);
-void	ft_del(char *str);
+
+int						ft_printf(const char *s, ...);
+void					ft_putchar_n(t_printf *p, char c);
+void					ft_putstr(t_printf *p);
+void					ft_checktype(t_printf *p);
+void					ft_printf_id(t_printf *p);
+void					ft_printf_c(t_printf *p);
+t_printf				*initzero(t_printf *p);
+void					ft_manage_flags(t_printf *p);
+void					ft_manage_digits(t_printf *p);
+void					ft_addzero(t_printf *p);
+void					ft_addflags(t_printf *p);
+void					ft_addspace(t_printf *p);
+void					ft_printf_x(t_printf *p);
+void					flagszero(t_printf *p);
+void					ft_print_str(t_printf *p);
+void					ft_putnbr_base(t_printf *p,
+						unsigned int nbr, char *base);
+void					ft_printf_p(t_printf *p);
+void					ft_addspace(t_printf *p);
+void					ft_addzero(t_printf *p);
+void					ft_putchar_precision(t_printf *p);
+void					ft_print_str(t_printf *p);
+void					ft_parse_numbers(t_printf *p);
+void					ft_print_nbr(t_printf *p);
+void					ft_print_percent(t_printf *p);
+void					ft_putchar_n(t_printf *p, char c);
+void					ft_del(char *str);
 #endif

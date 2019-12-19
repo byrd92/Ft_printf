@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 17:18:48 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:47:20 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:38:32 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,10 @@ char		*ft_putnbr_base_p(long unsigned int nb, char *base)
 void		ft_parse_memory_minus(t_printf *p)
 {
 	int		i;
-	int		k;
 	char	*aux;
 
-	k = 0;
 	ft_putchar_n(p, '0');
 	ft_putchar_n(p, 'x');
-
 	aux = ft_strdup(&p->print_str[2]);
 	free(p->print_str);
 	p->print_str = ft_strdup(aux);
@@ -55,7 +52,7 @@ void		ft_parse_memory_minus(t_printf *p)
 	ft_print_nbr(p);
 }
 
-void	ft_printf_p(t_printf *p)
+void		ft_printf_p(t_printf *p)
 {
 	long unsigned int	nbr;
 	char				*conv;

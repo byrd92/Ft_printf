@@ -6,13 +6,14 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 16:05:48 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/11/25 13:38:39 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:31:50 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Esta función añade una struct_lista(new) al final de la estructura **alst)
-*/ 
+** Esta función añade una struct_lista(new)
+** al final de la estructura **alst)
+*/
 
 #include "libft.h"
 

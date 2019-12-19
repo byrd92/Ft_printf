@@ -6,30 +6,55 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 12:23:39 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:47:31 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:39:38 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	ft_putnbr_base(t_printf *p, unsigned int nbr, char *base)
+static int	num_length(unsigned int n, int b)
 {
-	int			size;
-	long int	nb;
-	char		tmp;
-	int			i;
+	int	i;
 
-	size = ft_strlen(base);
 	i = 0;
-	nb = nbr;
-	p->print_str = malloc(sizeof(char) * size);
-	while (nbr > 0)
+	while (n > 0)
 	{
-		tmp = base[nbr % size];
-		p->print_str[i] = tmp;
-		nbr = nbr / size;
+		n /= b;
 		i++;
 	}
+	return (i);
+}
+
+int			putnbr(unsigned int nb, char *base, char *str, int l)
+{
+	int	b;
+
+	b = ft_strlen(base);
+	if (l == 0)
+	{
+		str[l] = base[nb % b];
+		return (0);
+	}
+	else
+	{
+		str[l] = base[nb % b];
+		return (putnbr(nb / b, base, str, --l));
+	}
+}
+
+char		*ft_itoa_base(unsigned int nbr, char *base)
+{
+	int		b;
+	char	*str;
+	int		l;
+
+	b = ft_strlen(base);
+	l = num_length(nbr, b);
+	if (!(str = malloc(sizeof(char) * l + 1)))
+		return (0);
+	str[l] = '\0';
+	putnbr(nbr, base, str, l - 1);
+	return (str);
 }
 
 void	ft_printf_x(t_printf *p)
@@ -37,21 +62,14 @@ void	ft_printf_x(t_printf *p)
 	unsigned int nbr;
 
 	nbr = va_arg(p->args, unsigned int);
-	if (*p->str == 'X')
-		ft_putnbr_base(p, nbr, "0123456789ABCDEF");
-	else if (*p->str == 'x')
-		ft_putnbr_base(p, nbr, "0123456789abcdef");
-	if (nbr == 0)
-	{
-		free(p->print_str);
+	if (nbr == 0 && p->flags[DOT] == 0)
 		p->print_str = ft_strdup("0");
-	}
-	if (p->flags[DOT] == 1 && nbr == 0)
-	{
-		free(p->print_str);
+	else if (p->flags[DOT] == 1 && nbr == 0)
 		p->print_str = ft_strdup("");
-	}
-	ft_strrev(p->print_str);
+	else if (*p->str == 'X')
+		p->print_str = ft_itoa_base(nbr, "0123456789ABCDEF");
+	else if (*p->str == 'x')
+		p->print_str = ft_itoa_base(nbr, "0123456789abcdef");
 	ft_parse_numbers(p);
 	ft_del(p->print_str);
 }

@@ -6,12 +6,13 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 13:46:24 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/11/25 13:30:37 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:32:58 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Función que crea un malloc y lo llena de ceros con ft_bzero 
+** Función que crea un malloc
+** y lo llena de ceros con ft_bzero
 */
 #include "libft.h"
 

@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 12:05:00 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 16:59:10 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:28:25 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_addflags(t_printf *p)
 {
-	int i;
-
-	i = 0;
 	if (p->flags[MINUS] == 0)
 	{
 		if (p->flags[ZERO] == 1 && p->flags[DOT] == 0)
@@ -40,12 +37,10 @@ void	ft_addzero(t_printf *p)
 {
 	int i;
 	int j;
-	int k;
 
 	i = 0;
 	j = ft_strlen(p->print_str);
-	k = j;
-	while (i < p->width - k + p->precision)
+	while (i < p->width - j + p->precision)
 	{
 		ft_putchar_n(p, '0');
 		i++;
@@ -76,12 +71,10 @@ void	ft_addspace(t_printf *p)
 
 void	ft_putchar_precision(t_printf *p)
 {
-	int i;
 	int j;
 	int k;
 
 	j = 0;
-	i = ft_strlen(p->print_str);
 	k = p->precision;
 	while (k-- > 0 && p->print_str[j])
 		ft_putchar_n(p, p->print_str[j++]);
@@ -98,4 +91,3 @@ void	ft_print_str(t_printf *p)
 		while (p->print_str[i])
 			ft_putchar_n(p, p->print_str[i++]);
 }
-

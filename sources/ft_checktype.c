@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/30 17:09:36 by byrd              #+#    #+#             */
-/*   Updated: 2019/12/18 13:08:35 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:38:21 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void		ft_checktype(t_printf *p)
 	{
 		ft_manage_flags(p);
 		p->str++;
+		if (*p->str == '\0')
+			return ;
 	}
 	if (*p->str == 's')
 		ft_putstr(p);
@@ -70,5 +72,3 @@ void		ft_manage_flags(t_printf *p)
 	else if (*p->str == '*')
 		ft_manage_mult(p);
 }
-
-

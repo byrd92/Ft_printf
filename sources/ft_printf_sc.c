@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 19:28:51 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 17:47:24 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:28:56 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		ft_putstr(t_printf *p)
 		p->print_str = ft_strdup(aux);
 	if (p->flags[DOT] == 1 && p->precision == 0 && p->width == 0)
 	{
-		free(p->print_str);
+		ft_del(p->print_str);
 		return ;
 	}
 	else
@@ -58,10 +58,8 @@ void		ft_printf_c(t_printf *p)
 	flagszero(p);
 }
 
-void	ft_print_percent(t_printf *p)
+void		ft_print_percent(t_printf *p)
 {
-	char str;
-
 	p->print_str = ft_strdup("%");
 	if (p->flags[MINUS] == 1)
 		p->flags[ZERO] = 0;

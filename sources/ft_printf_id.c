@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 15:39:37 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/18 18:10:32 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/19 11:28:41 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,3 @@ void	ft_printf_id(t_printf *p)
 	p->print_str = ft_strdup("");
 	ft_del(p->print_str);
 }
-
-
