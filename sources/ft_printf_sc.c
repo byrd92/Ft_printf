@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 19:28:51 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/19 11:28:56 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:24:00 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		ft_putstr(t_printf *p)
 		return ;
 	}
 	else
-		ft_addflags(p);
+		ft_parse_chars(p);
 	free(p->print_str);
 }
 

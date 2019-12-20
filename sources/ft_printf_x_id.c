@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_x.c                                      :+:      :+:    :+:   */
+/*   ft_printf_x_id.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 12:23:39 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/19 14:39:38 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:23:57 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char		*ft_itoa_base(unsigned int nbr, char *base)
 	return (str);
 }
 
-void	ft_printf_x(t_printf *p)
+void		ft_printf_x(t_printf *p)
 {
 	unsigned int nbr;
 
@@ -71,5 +71,31 @@ void	ft_printf_x(t_printf *p)
 	else if (*p->str == 'x')
 		p->print_str = ft_itoa_base(nbr, "0123456789abcdef");
 	ft_parse_numbers(p);
+	ft_del(p->print_str);
+}
+
+void	ft_printf_id(t_printf *p)
+{
+	int		nb;
+	int		i;
+
+	i = 0;
+	if (*p->str == 'u')
+	{
+		nb = va_arg(p->args, unsigned int);
+		p->print_str = ft_itoa_unsigned(nb);
+	}
+	else
+	{
+		nb = va_arg(p->args, int);
+		p->print_str = ft_itoa(nb);
+	}
+	if (p->flags[DOT] == 1 && nb == 0)
+	{
+		free(p->print_str);
+		p->print_str = ft_strdup("");
+	}
+	ft_parse_numbers(p);
+	p->print_str = ft_strdup("");
 	ft_del(p->print_str);
 }

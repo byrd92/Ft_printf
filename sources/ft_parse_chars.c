@@ -6,13 +6,13 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 12:05:00 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/19 11:28:25 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:11:53 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	ft_addflags(t_printf *p)
+void	ft_parse_chars(t_printf *p)
 {
 	if (p->flags[MINUS] == 0)
 	{

@@ -6,7 +6,7 @@
 #    By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/02 14:00:39 by egarcia-          #+#    #+#              #
-#    Updated: 2019/12/16 19:30:53 by egarcia-         ###   ########.fr        #
+#    Updated: 2019/12/20 16:11:12 by egarcia-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,9 @@ HEADER = include
 SOURCES = ft_printf.c \
 		  ft_printf_sc.c \
 		  ft_checktype.c \
-		  ft_printf_id.c \
 		  ft_initzero.c \
 		  ft_parse_chars.c \
-		  ft_printf_x.c \
+		  ft_printf_x_id.c \
 		  ft_printf_p.c \
 		  ft_parse_numbers.c
 

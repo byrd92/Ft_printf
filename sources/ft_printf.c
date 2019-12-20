@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 18:23:07 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/19 13:12:13 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:23:45 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_putchar_n(t_printf *p, char c)
 {
 	write(1, &c, 1);
 	p->count++;
-	p->index++;
 }
 
 int		ft_printf(const char *str, ...)

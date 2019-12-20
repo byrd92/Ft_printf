@@ -6,7 +6,7 @@
 /*   By: egarcia- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 14:28:48 by egarcia-          #+#    #+#             */
-/*   Updated: 2019/12/19 11:28:08 by egarcia-         ###   ########.fr       */
+/*   Updated: 2019/12/20 16:19:59 by egarcia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 t_printf	*initzero(t_printf *p)
 {
-	p->len = 0;
 	p->flags[ZERO] = 0;
 	p->flags[MINUS] = 0;
 	p->flags[DOT] = 0;
 	p->flags[MULT] = 0;
 	p->str = NULL;
 	p->print_str = NULL;
-	p->index = 0;
 	p->width = 0;
 	p->precision = 0;
 	return (p);
